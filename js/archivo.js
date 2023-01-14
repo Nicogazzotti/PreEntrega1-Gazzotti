@@ -1,19 +1,25 @@
-let tipoPizza= prompt('Ingrese "chica" si quiere pizza pequeña o "grande" si quiere pizza grande')
+let tipoPizza= prompt('Ingrese "1" si quiere pizza chica o "2" si quiere pizza grande')
 
-while ((tipoPizza != 'grande' ) && (tipoPizza != 'chica')){
-    tipoPizza=prompt('No es valido, Ingrese "chica" si quiere pizza pequeña o "grande" si quiere pizza grande ')
+while ((tipoPizza != 1 ) && (tipoPizza != 2)){
+    tipoPizza=prompt('No es valido, Ingrese "1" si quiere pizza pequeña o "2" si quiere pizza grande ')
 }
-console.log("Usted va a ordenar el tipo de pizza "+tipoPizza)
+let tamañoPizza=""
+if (tipoPizza==1){
+    tamañoPizza="chica"
+}else{
+    tamañoPizza="grande"
+}
+console.log("Usted va a ordenar el tipo de pizza "+tamañoPizza)
 
 let precio=0
 
-if (tipoPizza=="chica"){
+if (tamañoPizza=="chica"){
     precio=1300;
 } 
     else{
     precio=2000;
 }
-console.log("El precio individual de la pizza "+tipoPizza+" es de "+ precio)
+console.log("El precio individual de la pizza "+tamañoPizza+" es de "+ precio)
 
 let cantidad=parseInt(prompt('Ingrese la cantidad de pizzas que va a pedir'))
 while(cantidad==0 || cantidad==null){
@@ -27,8 +33,8 @@ else{
 }
 
 
-for (let i=1; i<cantidad+1 && i<3+1; i++){
-    let gustoPizza= prompt("Ingrese que gusto quiere para la pizza " + i +" (Solo disponible hasta las primeras 3 pizzas o las que se pidan ). Los gustos disponibles son napolitana, muzzarella, fugazzeta, cuatro quesos y calabresa.")
+for (let i=1; i<cantidad+1 && i<4+1; i++){
+    let gustoPizza= prompt("Ingrese que gusto quiere para la pizza " + i +" (Solo disponible hasta las primeras 4 pizzas o las que se pidan ). Los gustos disponibles son napolitana, muzzarella, fugazzeta, cuatro quesos y calabresa.")
 
     console.log('La pizza ' + i + ' es de '+gustoPizza)
 }
